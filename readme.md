@@ -11,29 +11,40 @@ To support its further development please consider [subscribing to Unmark.it](ht
 
 - [Download the latest release](https://github.com/cdevroe/unmark/releases) - Grab the latest and greatest version of Unmark.
 
+If you need assistance beyond what is provided in this Readme [create an issue on Github](https://github.com/cdevroe/unmark/issues). Before creating a new issue we recommend [search through the issues on GitHub](https://github.com/cdevroe/unmark/issues) to see how others have solved their problems.
+
 
 ## Installation
 
-Running Unmark is only recommended for intermediate users. This doesn't mean if you're a beginner we don't want you to try. Hack away! Just that you should expect some speedbumps (though, we're eliminating them all the time). If you need assistance beyond what is provided please [create an issue on Github](https://github.com/cdevroe/unmark/issues). Before creating a new issue we recommend [search through the issues on GitHub](https://github.com/cdevroe/unmark/issues) to see how others have solved their problems.
+Installation of Unmark locally is easier than ever using Docker.
 
-### Technical requirements
+### Installation using Docker-Compose
+
+- Install [Docker](http://docker.com/)
+- Clone the repository or, download [the latest release](https://github.com/cdevroe/unmark/releases)
+- Open Terminal and navigate to Unmark's location
+- Run `docker-compose up -d` to start Unmark
+- Install Unmark at localhost/setup]
+
+To shut down the containers that run Unmark run `docker-compose down`.
+
+### Installation using Apache, PHP, mySQL
+
+#### Minimum Version Information
 
 - Apache 2.x
 - PHP 5.6 or greater
 - mySQL 5.7 or greater
 
-** Using Docker to run locally**
-If know how to use Docker we've included the appropriate Docker Compose, Dockerfile, and PHP.ini files to do so. We've been using Docker on both Windows and Mac for the last two releases and we like it. However, this is still in its experimental phase.
+#### Common Issues with manual installs
 
-### Common Issues
-
-Some common issues have been reported. Some are trying to load Unmark on a sub-directory, using different versions of PHP or Apache, or using completely different databases. While it may be possible to do so, expect issues.
+Some common issues have been reported. Some are trying to load Unmark in a sub-directory, using different versions of PHP or Apache, or using completely different databases. While it may be possible to do so, expect issues, and we do not currently support these types of installations.
 
 Other common things that come up:
 - PHP mod_rewrite isn't enabled
 - PHP mysqli extension not installed
 
-### Installation Instructions
+#### Installation Instructions
 
 #### From Zip
 - Download [the latest release](https://github.com/cdevroe/unmark/releases)
@@ -44,7 +55,7 @@ Other common things that come up:
 - Point your browser to `your-local-url/setup`
 - If succesfull, you'll be asked to register a username and password
 
-#### From git repository
+#### From git repository (used for development)
 - Run `git clone https://github.com/cdevroe/unmark.git` (Or, if you've forked the repo, use your URL)
 - Copy the file `/application/config/database-sample.php` to `/application/config/database.php` (leave `database-sample.php` in place)
 - Create a database for Unmark to use in mySQL
@@ -74,9 +85,7 @@ Other common things that come up:
 
 ### Importing bookmarks
 
-Unmark currently supports importing from Unmark's hosted version, any self-hosted version of Unmark, Readability, Pinboard, Delicious, Pocket and many other services.
-
-To ensure this works properly be sure that your PHP.ini file's "max_upload_size" setting is larger than the file you're trying to import.
+Unmark currently supports importing from Unmark's hosted version, any self-hosted version of Unmark, Readability, Pinboard, Delicious, Pocket and many other services. To ensure this works properly be sure that your PHP.ini file's "max_upload_size" setting is larger than the file you're trying to import.
 
 ## How to contribute to Unmark
 
@@ -87,7 +96,7 @@ Another way is to contribute your own code via Pull Requests. Here are some note
 ### Forking and Pull Requests
 
 - Fork [the repository on GitHub](https://github.com/cdevroe/unmark/) into your own account
-- Create your own branch of the master branch `git checkout -b your-branch-name`
+- Create your own branch of the trunk branch `git checkout -b your-branch-name`
 - Update your code and push those code changes back to your fork's branch `git push origin your-branch-name`
 - [Submit a Pull Request](https://github.com/cdevroe/unmark/pulls) using that branch
 - And please accept our _thanks_!
@@ -98,9 +107,9 @@ We use [Grunt](http://gruntjs.com/) to compile our SASS files into CSS and conca
 
 ## History
 
-Unmark was originally created by [Colin Devroe](http://cdevroe.com/). It was a side-project called Nilai (the Indonesian word for "mark") and rebuilt from the ground up by Plain, a small software company, which included Jeff Johns, Kyle Ruane, Tim Whitacre, Chris Fehnel, Jakub Jakubiec and Colin Devroe.
+Unmark was originally created by [Colin Devroe](http://cdevroe.com/). It was a side-project called Nilai (the Indonesian word for "mark") and rebuilt from the ground up in 2013 by Plain, a small software company, which included Jeff Johns, Kyle Ruane, Tim Whitacre, Chris Fehnel, Jakub Jakubiec and Colin Devroe.
 
-Now it is being maintained by Colin, Kyle and the community in their spare time. Please consider donating or contributing code in order to keep Unmark alive and well.
+Now it is being maintained by Colin, Kyle and the community in their spare time. We still use it every day and we want it to be around forever. Please consider donating or contributing code in order to keep Unmark alive and well.
 
 ## Contributors
 
